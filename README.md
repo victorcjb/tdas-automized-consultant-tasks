@@ -32,4 +32,4 @@ Streamlit
 
 
 # Personal project notes
-Create homepage
+update coloring to match 
