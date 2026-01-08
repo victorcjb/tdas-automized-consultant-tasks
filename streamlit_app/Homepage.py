@@ -10,7 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 logo_path = BASE_DIR / "assets" / "FTI_LOGO_Blue-JPG.jpg"
 
 
-s
+
 st.set_page_config(
     page_title="Internal Analytics Tool",
     layout="wide"
@@ -18,15 +18,48 @@ st.set_page_config(
 
 st.image(str(logo_path), width=200)
 
-st.title("TDAS Productivity Tools App")
-st.subheader("Created by Victor Bouret, Consultant at FTI within the TDAS team. This tool is designed to help you be more efficient in key routine tasks.")
+st.markdown("""
+ ## TDAS Productivity Tools App""")
 
 st.markdown("""
-## How to navigate:
+#### How to navigate:
 
 Use the sidebar on the left to navigate to the specific analytics tools you would like to use.
             
-## Tools:
+#### Tools:
 
 There is a Jira tool and a Doc Review Excel sheet creator tool.
+            
+
 """)
+st.text("")  # one line space
+st.text("")  # another line space
+st.text("")  # one line space
+st.text("")  # another line space
+st.text("")  # one line space
+st.text("")  # another line space
+st.text("")  # one line space
+st.text("")  # another line space
+st.text("")  # one line space
+st.text("")  # another line space
+st.text("")  # one line space
+st.text("")  # another line space
+st.text("")  # one line space
+st.text("")  # another line space
+st.text("")  # one line space
+st.text("")  # another line space
+st.text("")  # one line space
+st.text("")  # another line space
+st.text("")  # one line space
+st.text("")  # another line space
+st.text("")  # one line space
+st.text("")  # another line space
+st.text("")  # one line space
+st.text("")  # another line space
+st.text("")  # one line space
+st.text("")  # another line space
+st.text("")  # one line space
+st.text("")  # another line space
+st.markdown("""
+#### Created by Victor Bouret, Consultant at FTI within the TDAS team. This tool is designed to help you be more efficient in key routine tasks.
+           """)
