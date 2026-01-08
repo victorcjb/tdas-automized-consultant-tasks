@@ -1,12 +1,20 @@
 #Homepage
+from pathlib import Path
 import streamlit as st
 import pandas as pd
+
+#LOGO Path
+BASE_DIR = Path(__file__).resolve().parent.parent
+logo_path = BASE_DIR / "assets" / "FTI_LOGO_Blue-JPG.jpg"
+
 
 
 st.set_page_config(
     page_title="Internal Analytics Tool",
     layout="wide"
 )
+
+st.image(str(logo_path), width=200)
 
 st.title("TDAS Productivity Tools App")
 st.subheader("Created by Victor Bouret, Consultant at FTI within the TDAS team. This tool is designed to help you be more efficient in key routine tasks.")
