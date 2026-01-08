@@ -2,13 +2,15 @@
 from pathlib import Path
 import streamlit as st
 import pandas as pd
+from config.style import apply_global_styles
+apply_global_styles()
 
 #LOGO Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 logo_path = BASE_DIR / "assets" / "FTI_LOGO_Blue-JPG.jpg"
 
 
-
+s
 st.set_page_config(
     page_title="Internal Analytics Tool",
     layout="wide"

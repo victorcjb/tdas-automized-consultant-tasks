@@ -2,6 +2,8 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+from config.style import apply_global_styles
+apply_global_styles()
 
 if "jira_step" not in st.session_state:
     st.session_state.jira_step = 1
@@ -16,7 +18,7 @@ st.write("This page contains all your Jira-related dashboards and data.")
 
 
 if st.session_state.jira_step == 1:
-    st.header("Jira Analytics – Setup")
+    st.header("Setup Page")
     #only supports csv and xlsx files. No other formats.
     uploaded_file = st.file_uploader(
         "Upload Jira CSV or Excel report",

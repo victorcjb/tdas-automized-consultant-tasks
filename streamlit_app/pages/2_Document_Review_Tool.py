@@ -1,6 +1,8 @@
 #Jira tab
 import streamlit as st
 import pandas as pd
+from config.style import apply_global_styles
+apply_global_styles()
 
 #Build Sidebar tool and page headers for Jira/Doc Review tool
 st.set_page_config(page_title="Document Review Tool")
