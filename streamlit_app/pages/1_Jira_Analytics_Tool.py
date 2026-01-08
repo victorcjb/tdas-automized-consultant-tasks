@@ -84,6 +84,7 @@ if st.session_state.jira_step == 1:
             if ready_to_analyze:
                 if st.button("Continue to Analysis ➡️"):
                     st.session_state.jira_step = 2
+                    st.rerun()
 
 
 # STEP 2: Analytics Dashboard
