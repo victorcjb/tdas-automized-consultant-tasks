@@ -25,3 +25,11 @@ Streamlit
 ## Features
 - Jira analytics → PPT
 - Document review log builder
+
+
+
+
+
+
+# Personal project notes
+Create homepage
