@@ -8,5 +8,4 @@ apply_global_styles()
 st.markdown("""
      ## Document Review Excel Creation Tab""")
 
-st.title("Document Review Excel Creation Tab")
 st.write("This page contains tool to select folder and create live excel document sheet.")

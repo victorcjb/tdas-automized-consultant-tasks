@@ -1,19 +1,21 @@
 # tdas-automized-consultant-tasks
 Project to automize repetitive tasks for my team to increase efficiency. 
 
+## Features
+- Jira analytics → PPT
+- Document review log builder
 
-
-# Backend 
+# Backend Built with:
 Python
-Pandas - spreadsheet parsin
-Plotly <--- /matplot lib for graphs
-python pptx for powerpoint export
-
-
-Pyinstaller to spread app
+Pandas -->  spreadsheet parsing
+Plotly --> for graphs
+Python pptx for powerpoint export
 
 # Front end
 Streamlit
+
+# Application Running
+Pyinstaller to spread app
 
 
 ## Setup
@@ -21,14 +23,6 @@ Streamlit
 2. Create venv and activate
 3. `pip install -r requirements.txt`
 4. `streamlit run app.py`
-
-## Features
-- Jira analytics → PPT
-- Document review log builder
-
-
-
-
 
 
 # Personal project notes

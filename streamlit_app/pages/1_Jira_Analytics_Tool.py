@@ -94,37 +94,51 @@ elif st.session_state.jira_step == 2:
     sel = st.session_state.selected_columns
 
     st.subheader("Data Dashboard")
+
+
+    def chart1(): 
+    # Convert dates strictly
+        df[sel["created_date"]] = pd.to_datetime(df[sel["created_date"]], format="%m/%d/%Y %H:%M", errors="raise")
+        df[sel["closed_date"]] = pd.to_datetime(df[sel["closed_date"]], format="%m/%d/%Y %H:%M", errors="raise")
+
+        # Compute duration
+        df['duration_days'] = (df[sel["closed_date"]] - df[sel["created_date"]]).dt.days
+
+        # Priority pie chart
+        priority_counts = df[sel["priority_level"]].value_counts().reset_index()
+        priority_counts.columns = ['priority', 'count']
+
+        fig_priority = px.pie(
+            priority_counts,
+            names='priority',
+            values='count',
+            title='Ticket Priority Breakdown',
+            color_discrete_sequence=px.colors.qualitative.Set2
+        )
+        st.plotly_chart(fig_priority, use_container_width=True)
+
+    def chart2():
+        # Duration histogram
+        fig_duration = px.histogram(
+            df,
+            x='duration_days',
+            nbins=20,
+            title='Ticket Duration (Days)',
+            color=df[sel["priority_level"]],
+            barmode='overlay',
+            color_discrete_sequence=px.colors.qualitative.Set2
+        )
+        st.plotly_chart(fig_duration, use_container_width=True)
+
+    # Top row: 2 charts, left 1/3 width, right 2/3 width
+    col1, col2 = st.columns([2, 3])
+    with col1:
+        chart1()
+    with col2:
+        chart2()
+
+
+    st.markdown("""
+    #### Data Breakdown""")
     st.text(f"Total rows: {len(df)}")
     st.dataframe(df.head())
-
-    # Convert dates strictly
-    df[sel["created_date"]] = pd.to_datetime(df[sel["created_date"]], format="%m/%d/%Y %H:%M", errors="raise")
-    df[sel["closed_date"]] = pd.to_datetime(df[sel["closed_date"]], format="%m/%d/%Y %H:%M", errors="raise")
-
-    # Compute duration
-    df['duration_days'] = (df[sel["closed_date"]] - df[sel["created_date"]]).dt.days
-
-    # Priority pie chart
-    priority_counts = df[sel["priority_level"]].value_counts().reset_index()
-    priority_counts.columns = ['priority', 'count']
-
-    fig_priority = px.pie(
-        priority_counts,
-        names='priority',
-        values='count',
-        title='Ticket Priority Breakdown',
-        color_discrete_sequence=px.colors.qualitative.Set2
-    )
-    st.plotly_chart(fig_priority, use_container_width=True)
-
-    # Duration histogram
-    fig_duration = px.histogram(
-        df,
-        x='duration_days',
-        nbins=20,
-        title='Ticket Duration (Days)',
-        color=df[sel["priority_level"]],
-        barmode='overlay',
-        color_discrete_sequence=px.colors.qualitative.Set2
-    )
-    st.plotly_chart(fig_duration, use_container_width=True)
